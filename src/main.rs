@@ -1,3 +1,5 @@
+use std::array;
+
 fn main() {
     println!("Hello, world!");
 }
@@ -58,10 +60,80 @@ fn test_6() {
     print!("{}", age3);
 
     // integer oveflow
-    let number  = 100000000;
+    let number = 100000000;
 
     let number2: i8 = number as i8;
     print!("{}", number2);
 }
 
+#[test]
+fn test_7() {
+    let age: i32 = 4;
+    print!("{}", age);
 
+    let age2: i16 = age as i16;
+    print!("{}", age2);
+
+    let age3: i8 = age2 as i8;
+    print!("{}", age3);
+
+    // integer oveflow
+    let number = 100000000;
+
+    let number2: i8 = number as i8;
+    print!("{}", number2);
+}
+
+#[test]
+fn test_8() {
+    let data = (10, 10.5, "mamang");
+    print!("{:?}", data);
+
+    let a = data.0;
+    print!("{}", a);
+    let b = data.1;
+    print!("{}", b);
+    let c = data.2;
+    print!("{}", c);
+
+    print!("{} {} {}", a, b, c)
+}
+
+#[test]
+fn test_9() {
+    let mut data = (10, 10, 120);
+    print!("{:?}\n", data);
+
+    let (a, _, c) = data;
+    print!("{} {}\n", a, c);
+    data.0 = 20;
+    data.1 = 30;
+
+    print!("{:?}\n", data)
+}
+
+#[test]
+fn test_10() {
+    let mut array = [1, 2, 3, 5];
+    println!("{:?}", array);
+
+    let a = array[1];
+    let b = array[2];
+    println!("{} {}", a, b);
+
+    array[0] = 10;
+    println!("{:?}", array);
+
+    let length = array.len();
+    println!("{}", length)
+}
+
+#[test]
+fn test_11() {
+    let matrix = [[1, 2], [23, 2]];
+
+    println!("{}", matrix[0][0]);
+    println!("{}", matrix[0][1]);
+    println!("{}", matrix[1][0]);
+    println!("{}", matrix[1][1]);
+}
